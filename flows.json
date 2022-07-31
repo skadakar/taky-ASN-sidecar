@@ -140,7 +140,7 @@
         "end": false,
         "tls": "dc169dd1444aa8a5",
         "x": 1760,
-        "y": 700,
+        "y": 840,
         "wires": []
     },
     {
@@ -161,7 +161,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 320,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
                 "8f20cd679e9941ff"
@@ -183,7 +183,7 @@
         "authType": "",
         "senderr": false,
         "x": 610,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
                 "6143fef560dcd819"
@@ -202,7 +202,7 @@
         "stream": false,
         "addname": "items",
         "x": 910,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
                 "7c855e3494b8fb4b"
@@ -231,7 +231,7 @@
         "repair": false,
         "outputs": 2,
         "x": 770,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [],
             [
@@ -248,7 +248,7 @@
         "action": "",
         "pretty": false,
         "x": 1030,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
                 "6d6bb2be1bbf16bb"
@@ -267,7 +267,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
                 "3032a4e1c0c6f848"
@@ -301,7 +301,7 @@
         "to": "",
         "reg": false,
         "x": 1320,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
                 "9fe8c7b135d6dd7c"
@@ -317,7 +317,7 @@
         "sql": "",
         "name": "LastSeen",
         "x": 800,
-        "y": 1000,
+        "y": 1140,
         "wires": [
             [
                 "5696ebc0ad6e3ff5"
@@ -336,7 +336,7 @@
         "template": "SELECT\n  *\nFROM\n  LastSeen\nWHERE\n  id = \"{{ payload }}\"",
         "output": "str",
         "x": 640,
-        "y": 1000,
+        "y": 1140,
         "wires": [
             [
                 "9a669186962e036a"
@@ -362,7 +362,7 @@
         "repair": false,
         "outputs": 2,
         "x": 970,
-        "y": 1000,
+        "y": 1140,
         "wires": [
             [
                 "15495a24e67a5f25"
@@ -384,7 +384,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 1020,
+        "y": 1160,
         "wires": [
             [
                 "ad21d524c6acfc09"
@@ -403,7 +403,7 @@
         "template": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<event version=\"2.0\" uid=\"COTUID-{{ payload.name }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ payload.name }}\" />\n      <__video uid=\"VIDEOUID-{{ payload.name }}\" url=\"{{global.ip}}:8554/{{ payload.name }}\">\n         <ConnectionEntry protocol=\"rtsp\" path=\"/{{ payload.name }}\" address=\"{{global.ip}}\" port=\"8554\" alias=\"{{ payload.name }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
         "output": "str",
         "x": 1340,
-        "y": 1000,
+        "y": 1140,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -422,7 +422,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 980,
+        "y": 1120,
         "wires": [
             [
                 "ad21d524c6acfc09"
@@ -601,7 +601,7 @@
         "name": "CONNECTS TO RTSP-SIMPLE-SERVER AND SENDS STREAMS AS COT",
         "info": "",
         "x": 410,
-        "y": 840,
+        "y": 980,
         "wires": []
     },
     {
@@ -611,7 +611,7 @@
         "name": "LAST SEEN LOCATION OF CALLSIGN",
         "info": "",
         "x": 290,
-        "y": 580,
+        "y": 720,
         "wires": []
     },
     {
@@ -623,7 +623,7 @@
         "attr": "",
         "chr": "",
         "x": 510,
-        "y": 640,
+        "y": 780,
         "wires": [
             [
                 "4bc22429be89c2bf"
@@ -642,7 +642,7 @@
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 640,
+        "y": 780,
         "wires": [
             [
                 "edd8448042a0e512",
@@ -662,7 +662,7 @@
         "template": "INSERT\nOR REPLACE INTO LastSeen\nvalues\n  (\n    \"{{ payload.name }}\",\n    \"{{ payload.lat }}\",\n    \"{{ payload.lon }}\",\n    \"{{ payload.hae }}\",\n    \"{{ payload.ce }}\",\n    \"{{ payload.le }}\"\n  )",
         "output": "str",
         "x": 780,
-        "y": 640,
+        "y": 780,
         "wires": [
             [
                 "944ed353ab3f91ee"
@@ -678,7 +678,7 @@
         "sql": "",
         "name": "LastSeen",
         "x": 920,
-        "y": 640,
+        "y": 780,
         "wires": [
             [
                 "12363bf61649cba8"
@@ -700,7 +700,7 @@
         "base64": false,
         "tls": "dc169dd1444aa8a5",
         "x": 230,
-        "y": 640,
+        "y": 780,
         "wires": [
             [
                 "626f25b30c2f56e9",
@@ -765,7 +765,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1070,
-        "y": 640,
+        "y": 780,
         "wires": []
     },
     {
@@ -787,7 +787,7 @@
         "repair": false,
         "outputs": 1,
         "x": 630,
-        "y": 700,
+        "y": 840,
         "wires": [
             [
                 "ce279869b9837123"
@@ -812,7 +812,7 @@
         "repair": false,
         "outputs": 1,
         "x": 510,
-        "y": 700,
+        "y": 840,
         "wires": [
             [
                 "d91a7eb8dd1fe56b"
@@ -859,7 +859,7 @@
         "to": "",
         "reg": false,
         "x": 840,
-        "y": 700,
+        "y": 840,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -873,7 +873,7 @@
         "name": "BONUS FEATURE!",
         "info": "Add the remark `del` to a marker to have it be nuked from the server. ",
         "x": 230,
-        "y": 740,
+        "y": 880,
         "wires": []
     },
     {
@@ -898,7 +898,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 1100,
+        "y": 1240,
         "wires": [
             [
                 "ac2f7aeb134767a7"
@@ -914,7 +914,7 @@
         "sql": "",
         "name": "FirtSeen",
         "x": 700,
-        "y": 1100,
+        "y": 1240,
         "wires": [
             [
                 "acad3dfe57b8629e"
@@ -933,7 +933,7 @@
         "template": "SELECT\n  *\nFROM\n  FirtSeen",
         "output": "str",
         "x": 520,
-        "y": 1100,
+        "y": 1240,
         "wires": [
             [
                 "8e94597b25c3c9db"
@@ -952,7 +952,7 @@
         "template": "INSERT INTO FirtSeen\nvalues\n  (\n    \"{{ payload.name }}\",\n    \"{{ payload.uid }}\",\n    \"{{ global.ts }}\"\n  )",
         "output": "str",
         "x": 780,
-        "y": 580,
+        "y": 720,
         "wires": [
             [
                 "4515a50fff6ab1c3"
@@ -968,7 +968,7 @@
         "sql": "",
         "name": "FirstSeen",
         "x": 920,
-        "y": 580,
+        "y": 720,
         "wires": [
             [
                 "ea685ea51d252cf4"
@@ -1092,7 +1092,7 @@
         "finalize": "",
         "libs": [],
         "x": 1240,
-        "y": 1100,
+        "y": 1240,
         "wires": [
             [
                 "aee342a0874ef1b7"
@@ -1108,10 +1108,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ payload.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Welcome to ASN-TAK!\n\nMake sure you are only on your teams server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ payload.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Welcome to ASN-TAK!\n\nMake sure you are only on your teams server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
         "output": "str",
         "x": 1440,
-        "y": 1100,
+        "y": 1240,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -1131,7 +1131,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1070,
-        "y": 580,
+        "y": 720,
         "wires": []
     },
     {
@@ -1142,7 +1142,7 @@
         "scope": null,
         "uncaught": false,
         "x": 200,
-        "y": 1360,
+        "y": 1500,
         "wires": [
             [
                 "36f85feb9687f191"
@@ -1170,7 +1170,7 @@
         "repair": false,
         "outputs": 2,
         "x": 350,
-        "y": 1360,
+        "y": 1500,
         "wires": [
             [
                 "a1b3bf7f5582bfc9"
@@ -1193,7 +1193,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1340,
+        "y": 1480,
         "wires": []
     },
     {
@@ -1209,7 +1209,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1380,
+        "y": 1520,
         "wires": []
     },
     {
@@ -1234,7 +1234,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 1180,
+        "y": 1320,
         "wires": [
             [
                 "ef2310c0a758608f"
@@ -1250,7 +1250,7 @@
         "sql": "",
         "name": "FirtSeen",
         "x": 700,
-        "y": 1180,
+        "y": 1320,
         "wires": [
             [
                 "301b050434fd8739"
@@ -1269,7 +1269,7 @@
         "template": "SELECT\n  *\nFROM\n  FirtSeen",
         "output": "str",
         "x": 520,
-        "y": 1180,
+        "y": 1320,
         "wires": [
             [
                 "c34895b9221a9d3b"
@@ -1285,10 +1285,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ global.starttime }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Reminder: {{ global.serverid }} connection is active.\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Reminder: {{ global.serverid }} connection is active. </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>\n",
         "output": "str",
         "x": 1440,
-        "y": 1180,
+        "y": 1320,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -1316,7 +1316,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 210,
+        "x": 230,
         "y": 520,
         "wires": [
             [
@@ -1379,7 +1379,7 @@
         "stream": false,
         "addname": "",
         "x": 950,
-        "y": 1100,
+        "y": 1240,
         "wires": [
             [
                 "c17052b3f8d3a0ac"
@@ -1398,10 +1398,58 @@
         "stream": false,
         "addname": "",
         "x": 950,
-        "y": 1180,
+        "y": 1320,
         "wires": [
             [
                 "62b9c7a93eda5066"
+            ]
+        ]
+    },
+    {
+        "id": "a874e786b84a9e28",
+        "type": "inject",
+        "z": "cfdaac38e6a0b145",
+        "name": "CREATE FAKE ASN-TAK",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "120",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 1400,
+        "wires": [
+            [
+                "8c1ccb8d53b5f3f7"
+            ]
+        ]
+    },
+    {
+        "id": "8c1ccb8d53b5f3f7",
+        "type": "template",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<event version=\"2.0\" uid=\"ASN-TAK-FAKEUID\" type=\"BOT\" how=\"m-g\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n  <point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n  <detail>\n    <takv device=\"ASN-TAK\" platform=\"TAK-BOT\" os=\"0\" />\n    <contact callsign=\"ASN-TAK\" endpoint=\"*:-1:stcp\"/>\n    <uid Droid=\"ASN-TAK\"/>\n    <__group name=\"Brown\" role=\"BOT\"/>\n    <status battery=\"0\"/>\n    <track course=\"0.00000000\" speed=\"0.00000000\"/>\n  </detail>\n</event>\n",
+        "output": "str",
+        "x": 1440,
+        "y": 1400,
+        "wires": [
+            [
+                "7dac542fdde70908"
             ]
         ]
     }
