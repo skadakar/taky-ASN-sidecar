@@ -1177,8 +1177,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 220,
-        "y": 1220,
+        "x": 200,
+        "y": 1360,
         "wires": [
             [
                 "9403302a8a12bb2d"
@@ -1205,8 +1205,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 370,
-        "y": 1220,
+        "x": 350,
+        "y": 1360,
         "wires": [
             [
                 "ad14ce4afb78bbcb"
@@ -1228,8 +1228,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 1200,
+        "x": 510,
+        "y": 1340,
         "wires": []
     },
     {
@@ -1244,8 +1244,126 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 1240,
+        "x": 510,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "703abcf84ffd6a8b",
+        "type": "inject",
+        "z": "242de052319dd764",
+        "name": "CONNECTION REMINDER",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "18000",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 1180,
+        "wires": [
+            [
+                "e45ce59ba8da9533"
+            ]
+        ]
+    },
+    {
+        "id": "9b06dd7a606a6752",
+        "type": "sqlite",
+        "z": "242de052319dd764",
+        "mydb": "4e71ffcc.32ba8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "FirtSeen",
+        "x": 700,
+        "y": 1180,
+        "wires": [
+            [
+                "26caaba4a2f39b78"
+            ]
+        ]
+    },
+    {
+        "id": "e45ce59ba8da9533",
+        "type": "template",
+        "z": "242de052319dd764",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n  *\nFROM\n  FirtSeen",
+        "output": "str",
+        "x": 520,
+        "y": 1180,
+        "wires": [
+            [
+                "9b06dd7a606a6752"
+            ]
+        ]
+    },
+    {
+        "id": "26caaba4a2f39b78",
+        "type": "split",
+        "z": "242de052319dd764",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 870,
+        "y": 1180,
+        "wires": [
+            [
+                "0271a6a21db71a0c"
+            ]
+        ]
+    },
+    {
+        "id": "0271a6a21db71a0c",
+        "type": "template",
+        "z": "242de052319dd764",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}{{ payload.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ payload.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Reminder that you are still connected to ASN-TAK {{ SERVER_ID }} server.\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
+        "output": "str",
+        "x": 1240,
+        "y": 1180,
+        "wires": [
+            [
+                "9f5559a4ca8e42af"
+            ]
+        ]
+    },
+    {
+        "id": "9f5559a4ca8e42af",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1430,
+        "y": 1180,
         "wires": []
     }
 ]
