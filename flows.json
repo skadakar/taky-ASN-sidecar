@@ -1404,53 +1404,5 @@
                 "62b9c7a93eda5066"
             ]
         ]
-    },
-    {
-        "id": "a874e786b84a9e28",
-        "type": "inject",
-        "z": "cfdaac38e6a0b145",
-        "name": "CREATE FAKE ASN-TAK",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "120",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 280,
-        "y": 1400,
-        "wires": [
-            [
-                "8c1ccb8d53b5f3f7"
-            ]
-        ]
-    },
-    {
-        "id": "8c1ccb8d53b5f3f7",
-        "type": "template",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"ASN-TAK-FAKEUID\" type=\"BOT\" how=\"m-g\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n  <point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n  <detail>\n    <takv device=\"ASN-TAK\" platform=\"TAK-BOT\" os=\"0\" />\n    <contact callsign=\"ASN-TAK\" endpoint=\"*:-1:stcp\"/>\n    <uid Droid=\"ASN-TAK\"/>\n    <__group name=\"Brown\" role=\"BOT\"/>\n    <status battery=\"0\"/>\n    <track course=\"0.00000000\" speed=\"0.00000000\"/>\n  </detail>\n</event>\n",
-        "output": "str",
-        "x": 1440,
-        "y": 1400,
-        "wires": [
-            [
-                "7dac542fdde70908"
-            ]
-        ]
     }
 ]
