@@ -1,4 +1,4 @@
-### TAKY RTSP Server sidecar
+### TAKY ASN Server sidecar
 
 https://github.com/skadakar/taky-rtsp-sidecar
 
@@ -22,6 +22,7 @@ Supported env variables:
     environment:
       - COT_IP=127.0.0.1
       - COT_PORT=8089
+      - CON_MSG=Whatever i want..
 ```
 
 Keys must be provided in pem/crt/key
