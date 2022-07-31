@@ -1,6 +1,6 @@
 [
     {
-        "id": "bec4301d57ac82a5",
+        "id": "cfdaac38e6a0b145",
         "type": "tab",
         "label": "TAK ASN SIDECAR",
         "disabled": false,
@@ -28,9 +28,9 @@
         "alpnprotocol": ""
     },
     {
-        "id": "9814034d1d68130a",
+        "id": "b78dc12070421d5c",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "CREATE",
         "props": [
             {
@@ -52,14 +52,14 @@
         "y": 80,
         "wires": [
             [
-                "7f2acbdf821123bb"
+                "e6e2d53b7a5f7f0d"
             ]
         ]
     },
     {
-        "id": "4bb5e672e2a67036",
+        "id": "3d24aed964ea8ef1",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "DROP TABLE",
         "props": [
             {
@@ -81,14 +81,14 @@
         "y": 120,
         "wires": [
             [
-                "7f2acbdf821123bb"
+                "e6e2d53b7a5f7f0d"
             ]
         ]
     },
     {
-        "id": "7f2acbdf821123bb",
+        "id": "e6e2d53b7a5f7f0d",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
@@ -97,14 +97,14 @@
         "y": 80,
         "wires": [
             [
-                "81f8f65820ec9ee1"
+                "3d5441a7822941fe"
             ]
         ]
     },
     {
-        "id": "81f8f65820ec9ee1",
+        "id": "3d5441a7822941fe",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -119,9 +119,9 @@
         "wires": []
     },
     {
-        "id": "0bb6330982fd4581",
+        "id": "5dc78d389b5dc148",
         "type": "comment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "CREATE DATABASES",
         "info": "",
         "x": 240,
@@ -129,24 +129,24 @@
         "wires": []
     },
     {
-        "id": "4d2626e27d92a41c",
+        "id": "7dac542fdde70908",
         "type": "tcp out",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "SEND-TO-TAK",
         "host": "${COT_IP}",
         "port": "${COT_PORT}",
         "beserver": "client",
         "base64": false,
-        "end": true,
+        "end": false,
         "tls": "dc169dd1444aa8a5",
         "x": 1760,
         "y": 700,
         "wires": []
     },
     {
-        "id": "20dc9c0fde31810e",
+        "id": "d6f574eafd9c4127",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "Start of simple video server propegator",
         "props": [
             {
@@ -164,14 +164,14 @@
         "y": 880,
         "wires": [
             [
-                "9a171bfbedc44fd4"
+                "8f20cd679e9941ff"
             ]
         ]
     },
     {
-        "id": "9a171bfbedc44fd4",
+        "id": "8f20cd679e9941ff",
         "type": "http request",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "method": "GET",
         "ret": "txt",
@@ -186,14 +186,14 @@
         "y": 880,
         "wires": [
             [
-                "692d87acb8f3ab9b"
+                "6143fef560dcd819"
             ]
         ]
     },
     {
-        "id": "ba6b9ead95dc6f27",
+        "id": "570453add72beeb9",
         "type": "split",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -205,14 +205,14 @@
         "y": 880,
         "wires": [
             [
-                "a594140bb5b9a4f5"
+                "7c855e3494b8fb4b"
             ]
         ]
     },
     {
-        "id": "692d87acb8f3ab9b",
+        "id": "6143fef560dcd819",
         "type": "switch",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -235,14 +235,14 @@
         "wires": [
             [],
             [
-                "ba6b9ead95dc6f27"
+                "570453add72beeb9"
             ]
         ]
     },
     {
-        "id": "a594140bb5b9a4f5",
+        "id": "7c855e3494b8fb4b",
         "type": "json",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "action": "",
@@ -251,14 +251,14 @@
         "y": 880,
         "wires": [
             [
-                "3957c6f760edfc42"
+                "6d6bb2be1bbf16bb"
             ]
         ]
     },
     {
-        "id": "3957c6f760edfc42",
+        "id": "6d6bb2be1bbf16bb",
         "type": "function",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "func": "msg.payload = Object.keys(msg.payload.items);\nreturn msg;",
         "outputs": 1,
@@ -270,14 +270,14 @@
         "y": 880,
         "wires": [
             [
-                "b749aeeac30319b2"
+                "3032a4e1c0c6f848"
             ]
         ]
     },
     {
-        "id": "b749aeeac30319b2",
+        "id": "3032a4e1c0c6f848",
         "type": "change",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "rules": [
             {
@@ -304,14 +304,14 @@
         "y": 880,
         "wires": [
             [
-                "3ae8946f440360c7"
+                "9fe8c7b135d6dd7c"
             ]
         ]
     },
     {
-        "id": "140616f7261f72f3",
+        "id": "9a669186962e036a",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
@@ -320,14 +320,14 @@
         "y": 1000,
         "wires": [
             [
-                "539bd27298093174"
+                "5696ebc0ad6e3ff5"
             ]
         ]
     },
     {
-        "id": "3ae8946f440360c7",
+        "id": "9fe8c7b135d6dd7c",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "topic",
         "fieldType": "msg",
@@ -339,14 +339,14 @@
         "y": 1000,
         "wires": [
             [
-                "140616f7261f72f3"
+                "9a669186962e036a"
             ]
         ]
     },
     {
-        "id": "539bd27298093174",
+        "id": "5696ebc0ad6e3ff5",
         "type": "switch",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -365,17 +365,17 @@
         "y": 1000,
         "wires": [
             [
-                "7b6d80a6fe4c2c65"
+                "15495a24e67a5f25"
             ],
             [
-                "1f15f466d7b00a29"
+                "6b2539fc0a171ef5"
             ]
         ]
     },
     {
-        "id": "1f15f466d7b00a29",
+        "id": "6b2539fc0a171ef5",
         "type": "function",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "func": "name = msg.payload[0].id;\nlat = msg.payload[0].lat;\nlon = msg.payload[0].lon;\nhae = msg.payload[0].hae;\nce = msg.payload[0].ce;\nle = msg.payload[0].le;\n\nmsg.payload = {\n  name: name,\n  lat: lat,\n  lon: lon,\n  hae: hae,\n  ce: ce,\n  le: le\n}\n\nreturn msg;",
         "outputs": 1,
@@ -387,14 +387,14 @@
         "y": 1020,
         "wires": [
             [
-                "a8349a79a6abfd54"
+                "ad21d524c6acfc09"
             ]
         ]
     },
     {
-        "id": "a8349a79a6abfd54",
+        "id": "ad21d524c6acfc09",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
@@ -406,14 +406,14 @@
         "y": 1000,
         "wires": [
             [
-                "4d2626e27d92a41c"
+                "7dac542fdde70908"
             ]
         ]
     },
     {
-        "id": "7b6d80a6fe4c2c65",
+        "id": "15495a24e67a5f25",
         "type": "function",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "func": "name = msg.backupname;\n\n\nmsg.payload = {\n  name: name,\n  lat: \"0.0\",\n  lon: \"0.0\",\n  hae: \"0.0\",\n  ce: \"99999\",\n  le: \"99999\"\n}\n\nreturn msg;",
         "outputs": 1,
@@ -425,14 +425,14 @@
         "y": 980,
         "wires": [
             [
-                "a8349a79a6abfd54"
+                "ad21d524c6acfc09"
             ]
         ]
     },
     {
-        "id": "4437698d915e900d",
+        "id": "c0d9ac6e74f95a24",
         "type": "ip",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "ip",
         "https": false,
         "timeout": "5000",
@@ -444,14 +444,14 @@
         "y": 260,
         "wires": [
             [
-                "0f2c7b51ac38b0b1"
+                "ee9bc92f013a5c92"
             ]
         ]
     },
     {
-        "id": "979ecd798012f7fb",
+        "id": "87afc73889c1e476",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "SET global.publicip",
         "props": [
             {
@@ -473,14 +473,14 @@
         "y": 260,
         "wires": [
             [
-                "4437698d915e900d"
+                "c0d9ac6e74f95a24"
             ]
         ]
     },
     {
-        "id": "fe196ac4be2c3c0f",
+        "id": "a2a594e440b35ecb",
         "type": "comment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "SET GLOBAL PUBLIC IP",
         "info": "",
         "x": 250,
@@ -488,9 +488,9 @@
         "wires": []
     },
     {
-        "id": "36832901dd77c53e",
+        "id": "a8ee9ec870a7b9f8",
         "type": "moment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "STALETIME",
         "topic": "",
         "input": "",
@@ -511,9 +511,9 @@
         ]
     },
     {
-        "id": "2a4904ebc757ef59",
+        "id": "61ade050b350b723",
         "type": "moment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "STARTTIME",
         "topic": "",
         "input": "",
@@ -534,9 +534,9 @@
         ]
     },
     {
-        "id": "a327249021e7554b",
+        "id": "fef6bcd925d21514",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "SET TIME VARIABLES",
         "props": [
             {
@@ -554,17 +554,17 @@
         "y": 340,
         "wires": [
             [
-                "36832901dd77c53e",
-                "2a4904ebc757ef59",
-                "d1b410cea65a0fd1",
-                "99e95055023b483a"
+                "a8ee9ec870a7b9f8",
+                "61ade050b350b723",
+                "467763cdcfba0049",
+                "5e1cdadc5e34611e"
             ]
         ]
     },
     {
-        "id": "d1b410cea65a0fd1",
+        "id": "467763cdcfba0049",
         "type": "moment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "VIDEOSTALETIME",
         "topic": "",
         "input": "",
@@ -585,9 +585,9 @@
         ]
     },
     {
-        "id": "de608c15fd63f03f",
+        "id": "22b0e537e04dc5e9",
         "type": "comment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "SET GLOBAL TIME VARIABLES",
         "info": "",
         "x": 270,
@@ -595,9 +595,9 @@
         "wires": []
     },
     {
-        "id": "1c9cec74bad221be",
+        "id": "cb14f86de5a75de6",
         "type": "comment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "CONNECTS TO RTSP-SIMPLE-SERVER AND SENDS STREAMS AS COT",
         "info": "",
         "x": 410,
@@ -605,9 +605,9 @@
         "wires": []
     },
     {
-        "id": "9e5007102089ec32",
+        "id": "8e25cdf4adba4304",
         "type": "comment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "LAST SEEN LOCATION OF CALLSIGN",
         "info": "",
         "x": 290,
@@ -615,9 +615,9 @@
         "wires": []
     },
     {
-        "id": "487e71479b7c92b2",
+        "id": "626f25b30c2f56e9",
         "type": "xml",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "attr": "",
@@ -626,14 +626,14 @@
         "y": 640,
         "wires": [
             [
-                "4276c8b9719cfb25"
+                "4bc22429be89c2bf"
             ]
         ]
     },
     {
-        "id": "4276c8b9719cfb25",
+        "id": "4bc22429be89c2bf",
         "type": "function",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "func": "let event = msg.payload[\"event\"];\nlet _detail = event[\"detail\"];\nlet detail = _detail[0];\n\nlet name = msg.payload.event.detail[0].contact[0].$.callsign;\nlet lat = msg.payload.event.point[0].$.lat;\nlet lon = msg.payload.event.point[0].$.lon;\nlet hae = msg.payload.event.point[0].$.hae;\nlet ce = msg.payload.event.point[0].$.ce;\nlet le = msg.payload.event.point[0].$.le;\nlet uid = msg.payload.event.$.uid\n\nmsg.payload = {\n  name: name,\n  lat: lat,\n  lon: lon,\n  hae: hae,\n  ce: ce,\n  le: le,\n  uid: uid\n}\n\nreturn msg;",
         "outputs": 1,
@@ -645,15 +645,15 @@
         "y": 640,
         "wires": [
             [
-                "d6604ab5d8b32216",
-                "8e86d983257c0a1b"
+                "edd8448042a0e512",
+                "f89b99464997a53f"
             ]
         ]
     },
     {
-        "id": "d6604ab5d8b32216",
+        "id": "edd8448042a0e512",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "topic",
         "fieldType": "msg",
@@ -665,14 +665,14 @@
         "y": 640,
         "wires": [
             [
-                "2fca9639c3d87ab2"
+                "944ed353ab3f91ee"
             ]
         ]
     },
     {
-        "id": "2fca9639c3d87ab2",
+        "id": "944ed353ab3f91ee",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
@@ -681,14 +681,14 @@
         "y": 640,
         "wires": [
             [
-                "d235bc0267da419d"
+                "12363bf61649cba8"
             ]
         ]
     },
     {
-        "id": "93035aa417142c8f",
+        "id": "ab43ec80bcb3c9a5",
         "type": "tcp tls in",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "FETCH-FROM-TAK",
         "server": "client",
         "host": "${COT_IP}",
@@ -703,15 +703,15 @@
         "y": 640,
         "wires": [
             [
-                "487e71479b7c92b2",
-                "744153d7e1c28a9f"
+                "626f25b30c2f56e9",
+                "8c28418a908e0f31"
             ]
         ]
     },
     {
-        "id": "0f2c7b51ac38b0b1",
+        "id": "ee9bc92f013a5c92",
         "type": "change",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "rules": [
             {
@@ -731,14 +731,14 @@
         "y": 260,
         "wires": [
             [
-                "6556eca5b746baf8"
+                "f62624443367d01d"
             ]
         ]
     },
     {
-        "id": "6556eca5b746baf8",
+        "id": "f62624443367d01d",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -753,9 +753,9 @@
         "wires": []
     },
     {
-        "id": "d235bc0267da419d",
+        "id": "12363bf61649cba8",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -769,9 +769,9 @@
         "wires": []
     },
     {
-        "id": "ff13f108579ee042",
+        "id": "d91a7eb8dd1fe56b",
         "type": "switch",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -790,14 +790,14 @@
         "y": 700,
         "wires": [
             [
-                "668481a992ed89b3"
+                "ce279869b9837123"
             ]
         ]
     },
     {
-        "id": "744153d7e1c28a9f",
+        "id": "8c28418a908e0f31",
         "type": "switch",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -815,14 +815,14 @@
         "y": 700,
         "wires": [
             [
-                "ff13f108579ee042"
+                "d91a7eb8dd1fe56b"
             ]
         ]
     },
     {
-        "id": "668481a992ed89b3",
+        "id": "ce279869b9837123",
         "type": "change",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "NULL ISLAND AND NUKE",
         "rules": [
             {
@@ -862,14 +862,14 @@
         "y": 700,
         "wires": [
             [
-                "4d2626e27d92a41c"
+                "7dac542fdde70908"
             ]
         ]
     },
     {
-        "id": "8753fedb224c05e4",
+        "id": "fb1cb20f91357c0b",
         "type": "comment",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "BONUS FEATURE!",
         "info": "Add the remark `del` to a marker to have it be nuked from the server. ",
         "x": 230,
@@ -877,9 +877,9 @@
         "wires": []
     },
     {
-        "id": "1a88feb609dfbac0",
+        "id": "0f7b81ae56a90cea",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "CHECK FOR NEW USERS",
         "props": [
             {
@@ -898,33 +898,33 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 1160,
+        "y": 1100,
         "wires": [
             [
-                "11219ff6cb1848a2"
+                "ac2f7aeb134767a7"
             ]
         ]
     },
     {
-        "id": "072b75f527900bf6",
+        "id": "8e94597b25c3c9db",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "FirtSeen",
         "x": 700,
-        "y": 1160,
+        "y": 1100,
         "wires": [
             [
-                "71577e908f8b99d7"
+                "acad3dfe57b8629e"
             ]
         ]
     },
     {
-        "id": "11219ff6cb1848a2",
+        "id": "ac2f7aeb134767a7",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "topic",
         "fieldType": "msg",
@@ -933,17 +933,17 @@
         "template": "SELECT\n  *\nFROM\n  FirtSeen",
         "output": "str",
         "x": 520,
-        "y": 1160,
+        "y": 1100,
         "wires": [
             [
-                "072b75f527900bf6"
+                "8e94597b25c3c9db"
             ]
         ]
     },
     {
-        "id": "8e86d983257c0a1b",
+        "id": "f89b99464997a53f",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "topic",
         "fieldType": "msg",
@@ -955,14 +955,14 @@
         "y": 580,
         "wires": [
             [
-                "2882f2d92f73047b"
+                "4515a50fff6ab1c3"
             ]
         ]
     },
     {
-        "id": "2882f2d92f73047b",
+        "id": "4515a50fff6ab1c3",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
@@ -971,14 +971,14 @@
         "y": 580,
         "wires": [
             [
-                "d8e04c29417d7970"
+                "ea685ea51d252cf4"
             ]
         ]
     },
     {
-        "id": "d8e454c4f5617df2",
+        "id": "d967d2660a6b72ff",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
@@ -987,14 +987,14 @@
         "y": 160,
         "wires": [
             [
-                "953f9a955c385af3"
+                "8c4b46161fc5522c"
             ]
         ]
     },
     {
-        "id": "3f830a811a92e279",
+        "id": "427424acdf3c153a",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "CREATE",
         "props": [
             {
@@ -1016,14 +1016,14 @@
         "y": 160,
         "wires": [
             [
-                "d8e454c4f5617df2"
+                "d967d2660a6b72ff"
             ]
         ]
     },
     {
-        "id": "953f9a955c385af3",
+        "id": "8c4b46161fc5522c",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1038,9 +1038,9 @@
         "wires": []
     },
     {
-        "id": "99e95055023b483a",
+        "id": "5e1cdadc5e34611e",
         "type": "change",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "GLOBAL TS",
         "rules": [
             {
@@ -1060,14 +1060,14 @@
         "y": 460,
         "wires": [
             [
-                "fd5f373fcbc88dc5"
+                "bd1f2ce7346aad54"
             ]
         ]
     },
     {
-        "id": "fd5f373fcbc88dc5",
+        "id": "bd1f2ce7346aad54",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1081,9 +1081,9 @@
         "wires": []
     },
     {
-        "id": "27b16a60b0ae3fb4",
+        "id": "c17052b3f8d3a0ac",
         "type": "function",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "func": "if (msg.payload.ts < global.ts -300 ){\n   return [ msg.payload ];\n} else {\n   return [ msg, null ];\n}\n",
         "outputs": 1,
@@ -1091,73 +1091,37 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 1160,
+        "x": 1240,
+        "y": 1100,
         "wires": [
             [
-                "4b7b9751dd2abd64"
+                "aee342a0874ef1b7"
             ]
         ]
     },
     {
-        "id": "71577e908f8b99d7",
-        "type": "split",
-        "z": "bec4301d57ac82a5",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 870,
-        "y": 1160,
-        "wires": [
-            [
-                "27b16a60b0ae3fb4"
-            ]
-        ]
-    },
-    {
-        "id": "4b7b9751dd2abd64",
+        "id": "aee342a0874ef1b7",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}{{ payload.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ payload.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Welcome to ASN-TAK!\n\nMake sure you are only on your teams server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ payload.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Welcome to ASN-TAK!\n\nMake sure you are only on your teams server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
         "output": "str",
-        "x": 1240,
-        "y": 1160,
+        "x": 1440,
+        "y": 1100,
         "wires": [
             [
-                "4dd27b80196eeb79",
-                "4d2626e27d92a41c"
+                "7dac542fdde70908"
             ]
         ]
     },
     {
-        "id": "4dd27b80196eeb79",
+        "id": "ea685ea51d252cf4",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1430,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "d8e04c29417d7970",
-        "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1171,24 +1135,24 @@
         "wires": []
     },
     {
-        "id": "382a60df2e96250f",
+        "id": "b3f06a54d086d62a",
         "type": "catch",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "scope": null,
         "uncaught": false,
         "x": 200,
-        "y": 1420,
+        "y": 1360,
         "wires": [
             [
-                "dd3d585ab6a16665"
+                "36f85feb9687f191"
             ]
         ]
     },
     {
-        "id": "dd3d585ab6a16665",
+        "id": "36f85feb9687f191",
         "type": "switch",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -1206,20 +1170,20 @@
         "repair": false,
         "outputs": 2,
         "x": 350,
-        "y": 1420,
+        "y": 1360,
         "wires": [
             [
-                "b442f7560ff97c11"
+                "a1b3bf7f5582bfc9"
             ],
             [
-                "b167cb240dbb80bc"
+                "115cab0577cf345f"
             ]
         ]
     },
     {
-        "id": "b442f7560ff97c11",
+        "id": "a1b3bf7f5582bfc9",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1229,13 +1193,13 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1400,
+        "y": 1340,
         "wires": []
     },
     {
-        "id": "b167cb240dbb80bc",
+        "id": "115cab0577cf345f",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -1245,13 +1209,13 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1440,
+        "y": 1380,
         "wires": []
     },
     {
-        "id": "0d6ffbe7d97f4d85",
+        "id": "891f1c8a50b53da8",
         "type": "inject",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "CONNECTION REMINDER",
         "props": [
             {
@@ -1262,7 +1226,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "18000",
+        "repeat": "10800",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -1270,33 +1234,33 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 1240,
+        "y": 1180,
         "wires": [
             [
-                "0c55af54e5e6c09d"
+                "ef2310c0a758608f"
             ]
         ]
     },
     {
-        "id": "e7178cf43a83da04",
+        "id": "c34895b9221a9d3b",
         "type": "sqlite",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "mydb": "4e71ffcc.32ba8",
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "FirtSeen",
         "x": 700,
-        "y": 1240,
+        "y": 1180,
         "wires": [
             [
-                "02eaf086528a8b21"
+                "301b050434fd8739"
             ]
         ]
     },
     {
-        "id": "0c55af54e5e6c09d",
+        "id": "ef2310c0a758608f",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "topic",
         "fieldType": "msg",
@@ -1305,79 +1269,71 @@
         "template": "SELECT\n  *\nFROM\n  FirtSeen",
         "output": "str",
         "x": 520,
-        "y": 1240,
+        "y": 1180,
         "wires": [
             [
-                "e7178cf43a83da04"
+                "c34895b9221a9d3b"
             ]
         ]
     },
     {
-        "id": "02eaf086528a8b21",
-        "type": "split",
-        "z": "bec4301d57ac82a5",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 850,
-        "y": 1240,
-        "wires": [
-            [
-                "342281aa9b0f6dc4",
-                "9b1637916ab4073c"
-            ]
-        ]
-    },
-    {
-        "id": "7474ac7c002af793",
+        "id": "62b9c7a93eda5066",
         "type": "template",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}{{ global.starttime }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ global.starttime }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Reminder: {{ payload.serverid }} connection is active.\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ global.starttime }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">Reminder: {{ global.serverid }} connection is active.\n      </remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
         "output": "str",
-        "x": 1240,
-        "y": 1240,
+        "x": 1440,
+        "y": 1180,
         "wires": [
             [
-                "b8499ab1a58576a8",
-                "4d2626e27d92a41c"
+                "7dac542fdde70908"
             ]
         ]
     },
     {
-        "id": "b8499ab1a58576a8",
-        "type": "debug",
-        "z": "bec4301d57ac82a5",
+        "id": "409a597044c74578",
+        "type": "inject",
+        "z": "cfdaac38e6a0b145",
         "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1430,
-        "y": 1240,
-        "wires": []
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "356e5f876b6cbe18"
+            ]
+        ]
     },
     {
-        "id": "342281aa9b0f6dc4",
+        "id": "356e5f876b6cbe18",
         "type": "change",
-        "z": "bec4301d57ac82a5",
+        "z": "cfdaac38e6a0b145",
         "name": "SET SERVER COLOR",
         "rules": [
             {
                 "t": "set",
-                "p": "payload.serverid",
-                "pt": "msg",
+                "p": "serverid",
+                "pt": "global",
                 "to": "SERVER_ID",
                 "tot": "env"
             }
@@ -1387,28 +1343,66 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
-        "y": 1240,
+        "x": 560,
+        "y": 520,
         "wires": [
             [
-                "7474ac7c002af793"
+                "0812b93e4c22e689"
             ]
         ]
     },
     {
-        "id": "9b1637916ab4073c",
+        "id": "0812b93e4c22e689",
         "type": "debug",
-        "z": "bec4301d57ac82a5",
-        "name": "debug 2",
-        "active": true,
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
-        "y": 1400,
+        "x": 810,
+        "y": 520,
         "wires": []
+    },
+    {
+        "id": "acad3dfe57b8629e",
+        "type": "split",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 950,
+        "y": 1100,
+        "wires": [
+            [
+                "c17052b3f8d3a0ac"
+            ]
+        ]
+    },
+    {
+        "id": "301b050434fd8739",
+        "type": "split",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 950,
+        "y": 1180,
+        "wires": [
+            [
+                "62b9c7a93eda5066"
+            ]
+        ]
     }
 ]
