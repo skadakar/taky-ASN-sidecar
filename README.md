@@ -22,7 +22,7 @@ Supported env variables:
     environment:
       - COT_IP=127.0.0.1
       - COT_PORT=8089
-      - CON_MSG=Whatever i want..
+      - SERVER_ID=Something
 ```
 
 Keys must be provided in pem/crt/key
