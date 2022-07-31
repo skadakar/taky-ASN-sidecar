@@ -33,5 +33,5 @@ jobs:
       - name: build the image
         run: |
           docker buildx build \
-          --tag skadakar/taky-ASN-sidecar:latest \
+          --tag skadakar/taky-asn-sidecar:latest \
           --platform linux/amd64 . --push
