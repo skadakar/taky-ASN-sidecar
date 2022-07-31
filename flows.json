@@ -2,7 +2,7 @@
     {
         "id": "242de052319dd764",
         "type": "tab",
-        "label": "TAK RTSP SIDECAR",
+        "label": "TAK ASN SIDECAR",
         "disabled": false,
         "info": "",
         "env": []
@@ -49,7 +49,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 220,
-        "y": 120,
+        "y": 80,
         "wires": [
             [
                 "475f3022d2eda5f0"
@@ -78,7 +78,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 230,
-        "y": 180,
+        "y": 120,
         "wires": [
             [
                 "475f3022d2eda5f0"
@@ -94,7 +94,7 @@
         "sql": "",
         "name": "LastSeen",
         "x": 520,
-        "y": 120,
+        "y": 80,
         "wires": [
             [
                 "a643579e94b9f398"
@@ -115,7 +115,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 670,
-        "y": 120,
+        "y": 80,
         "wires": []
     },
     {
@@ -125,7 +125,7 @@
         "name": "CREATE DATABASES",
         "info": "",
         "x": 240,
-        "y": 80,
+        "y": 40,
         "wires": []
     },
     {
@@ -140,7 +140,7 @@
         "end": true,
         "tls": "dc169dd1444aa8a5",
         "x": 1760,
-        "y": 680,
+        "y": 640,
         "wires": []
     },
     {
@@ -161,7 +161,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 320,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "9c5e1adc1b829ded"
@@ -183,7 +183,7 @@
         "authType": "",
         "senderr": false,
         "x": 610,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "627547b2c765190d"
@@ -202,7 +202,7 @@
         "stream": false,
         "addname": "items",
         "x": 910,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "05e1d718ac3801b1"
@@ -231,7 +231,7 @@
         "repair": false,
         "outputs": 2,
         "x": 770,
-        "y": 760,
+        "y": 820,
         "wires": [
             [],
             [
@@ -248,7 +248,7 @@
         "action": "",
         "pretty": false,
         "x": 1030,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "6b4a9cc0ebba9c76"
@@ -267,7 +267,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "c5f1b30c960f9e80"
@@ -301,7 +301,7 @@
         "to": "",
         "reg": false,
         "x": 1320,
-        "y": 760,
+        "y": 820,
         "wires": [
             [
                 "03e0f4922a03801b"
@@ -317,7 +317,7 @@
         "sql": "",
         "name": "LastSeen",
         "x": 800,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "87fc9d4f0e38e032"
@@ -336,7 +336,7 @@
         "template": "SELECT\n  *\nFROM\n  LastSeen\nWHERE\n  id = \"{{ payload }}\"",
         "output": "str",
         "x": 640,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "c132c06514e426a7"
@@ -362,7 +362,7 @@
         "repair": false,
         "outputs": 2,
         "x": 970,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "2dc45a9a214062f8"
@@ -384,7 +384,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 900,
+        "y": 960,
         "wires": [
             [
                 "16b8630b62dda7d9"
@@ -403,7 +403,7 @@
         "template": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<event version=\"2.0\" uid=\"COTUID-{{ payload.name }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ payload.name }}\" />\n      <__video uid=\"VIDEOUID-{{ payload.name }}\" url=\"{{global.ip}}:8554/{{ payload.name }}\">\n         <ConnectionEntry protocol=\"rtsp\" path=\"/{{ payload.name }}\" address=\"{{global.ip}}\" port=\"8554\" alias=\"{{ payload.name }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
         "output": "str",
         "x": 1340,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "6ecd8bb991185975"
@@ -422,7 +422,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 860,
+        "y": 920,
         "wires": [
             [
                 "16b8630b62dda7d9"
@@ -556,7 +556,8 @@
             [
                 "8d6af2579388f9a1",
                 "ba8f6b8788587ff1",
-                "60545bc1e8557463"
+                "60545bc1e8557463",
+                "d5130fb27dfcae63"
             ]
         ]
     },
@@ -600,7 +601,7 @@
         "name": "CONNECTS TO RTSP-SIMPLE-SERVER AND SENDS STREAMS AS COT",
         "info": "",
         "x": 410,
-        "y": 720,
+        "y": 780,
         "wires": []
     },
     {
@@ -610,7 +611,7 @@
         "name": "LAST SEEN LOCATION OF CALLSIGN",
         "info": "",
         "x": 290,
-        "y": 460,
+        "y": 520,
         "wires": []
     },
     {
@@ -622,7 +623,7 @@
         "attr": "",
         "chr": "",
         "x": 510,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "df06b92e228a619c"
@@ -634,17 +635,18 @@
         "type": "function",
         "z": "242de052319dd764",
         "name": "",
-        "func": "let event = msg.payload[\"event\"];\nlet _detail = event[\"detail\"];\nlet detail = _detail[0];\n\nlet name = msg.payload.event.detail[0].contact[0].$.callsign;\nlet lat = msg.payload.event.point[0].$.lat;\nlet lon = msg.payload.event.point[0].$.lon;\nlet hae = msg.payload.event.point[0].$.hae;\nlet ce = msg.payload.event.point[0].$.ce;\nlet le = msg.payload.event.point[0].$.le;\n\nmsg.payload = {\n  name: name,\n  lat: lat,\n  lon: lon,\n  hae: hae,\n  ce: ce,\n  le: le\n}\n\nreturn msg;",
+        "func": "let event = msg.payload[\"event\"];\nlet _detail = event[\"detail\"];\nlet detail = _detail[0];\n\nlet name = msg.payload.event.detail[0].contact[0].$.callsign;\nlet lat = msg.payload.event.point[0].$.lat;\nlet lon = msg.payload.event.point[0].$.lon;\nlet hae = msg.payload.event.point[0].$.hae;\nlet ce = msg.payload.event.point[0].$.ce;\nlet le = msg.payload.event.point[0].$.le;\nlet uid = msg.payload.event.$.uid\n\nmsg.payload = {\n  name: name,\n  lat: lat,\n  lon: lon,\n  hae: hae,\n  ce: ce,\n  le: le,\n  uid: uid\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
-                "72f68c5af61e9094"
+                "72f68c5af61e9094",
+                "efb339c9b8555222"
             ]
         ]
     },
@@ -660,7 +662,7 @@
         "template": "INSERT\nOR REPLACE INTO LastSeen\nvalues\n  (\n    \"{{ payload.name }}\",\n    \"{{ payload.lat }}\",\n    \"{{ payload.lon }}\",\n    \"{{ payload.hae }}\",\n    \"{{ payload.ce }}\",\n    \"{{ payload.le }}\"\n  )",
         "output": "str",
         "x": 780,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "80080336b4a72668"
@@ -676,7 +678,7 @@
         "sql": "",
         "name": "LastSeen",
         "x": 920,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "846ad76b214b0523"
@@ -698,7 +700,7 @@
         "base64": false,
         "tls": "dc169dd1444aa8a5",
         "x": 230,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "ce49611454b2f693",
@@ -763,7 +765,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1070,
-        "y": 520,
+        "y": 580,
         "wires": []
     },
     {
@@ -785,7 +787,7 @@
         "repair": false,
         "outputs": 1,
         "x": 630,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
                 "13188eff2d082b19"
@@ -810,7 +812,7 @@
         "repair": false,
         "outputs": 1,
         "x": 510,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
                 "83313d60ee8b2f5e"
@@ -857,7 +859,7 @@
         "to": "",
         "reg": false,
         "x": 840,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
                 "6ecd8bb991185975"
@@ -871,7 +873,379 @@
         "name": "BONUS FEATURE!",
         "info": "Add the remark `del` to a marker to have it be nuked from the server. ",
         "x": 230,
-        "y": 620,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "bc85915f26b78a36",
+        "type": "inject",
+        "z": "242de052319dd764",
+        "name": "CHECK FOR NEW USERS",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 1100,
+        "wires": [
+            [
+                "9bca219742058a07"
+            ]
+        ]
+    },
+    {
+        "id": "373d4a4993f272ef",
+        "type": "sqlite",
+        "z": "242de052319dd764",
+        "mydb": "4e71ffcc.32ba8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "FirtSeen",
+        "x": 700,
+        "y": 1100,
+        "wires": [
+            [
+                "ec0c75e0ba03212d"
+            ]
+        ]
+    },
+    {
+        "id": "9bca219742058a07",
+        "type": "template",
+        "z": "242de052319dd764",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n  *\nFROM\n  FirtSeen",
+        "output": "str",
+        "x": 520,
+        "y": 1100,
+        "wires": [
+            [
+                "373d4a4993f272ef"
+            ]
+        ]
+    },
+    {
+        "id": "efb339c9b8555222",
+        "type": "template",
+        "z": "242de052319dd764",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO FirtSeen\nvalues\n  (\n    \"{{ payload.name }}\",\n    \"{{ payload.uid }}\",\n    \"{{ global.ts }}\"\n  )",
+        "output": "str",
+        "x": 780,
+        "y": 520,
+        "wires": [
+            [
+                "328af18bc641f6db"
+            ]
+        ]
+    },
+    {
+        "id": "328af18bc641f6db",
+        "type": "sqlite",
+        "z": "242de052319dd764",
+        "mydb": "4e71ffcc.32ba8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "FirstSeen",
+        "x": 920,
+        "y": 520,
+        "wires": [
+            [
+                "ea39d8ca12b93f95"
+            ]
+        ]
+    },
+    {
+        "id": "b8f975db1f717ffe",
+        "type": "sqlite",
+        "z": "242de052319dd764",
+        "mydb": "4e71ffcc.32ba8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "FirstSeen",
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "ad13f873aea0aa34"
+            ]
+        ]
+    },
+    {
+        "id": "50a38e0343d6fb65",
+        "type": "inject",
+        "z": "242de052319dd764",
+        "name": "CREATE",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "CREATE TABLE FirtSeen(id TEXT PRIMARY KEY, uid, ts)",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "b8f975db1f717ffe"
+            ]
+        ]
+    },
+    {
+        "id": "ad13f873aea0aa34",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d5130fb27dfcae63",
+        "type": "change",
+        "z": "242de052319dd764",
+        "name": "GLOBAL TS",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ts",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 460,
+        "wires": [
+            [
+                "9b5815035552f207"
+            ]
+        ]
+    },
+    {
+        "id": "9b5815035552f207",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d59786ae225e4305",
+        "type": "function",
+        "z": "242de052319dd764",
+        "name": "",
+        "func": "if (msg.payload.ts < global.ts -300 ){\n   return [ msg.payload ];\n} else {\n   return [ msg, null ];\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1100,
+        "wires": [
+            [
+                "d2917060846a0c1c"
+            ]
+        ]
+    },
+    {
+        "id": "ec0c75e0ba03212d",
+        "type": "split",
+        "z": "242de052319dd764",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 870,
+        "y": 1100,
+        "wires": [
+            [
+                "d59786ae225e4305"
+            ]
+        ]
+    },
+    {
+        "id": "d2917060846a0c1c",
+        "type": "template",
+        "z": "242de052319dd764",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<event version=\"2.0\" uid=\"GeoChat.{{ payload.id }}{{ payload.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"0.000000\" lon=\"0.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\" />\n   <detail>\n      <__chat senderCallsign=\"ASN-TAK\" chatroom=\"{{ payload.id }}\" groupOwner=\"false\" id=\"{{ payload.uid }}\" parent=\"RootContactGroup\" messageId=\"JunkMessageId-{{ payload.uid }}-{{ payload.ts }}\">\n         <chatgrp uid0=\"{{ payload.uid }}\" uid1=\"ASN-TAK-FAKEUID\" id=\"ChatGroup-{{ payload.id }}\" />\n      </__chat>\n      <link uid=\"{{ payload.uid }}\" type=\"a-f-G-U-C\" relation=\"p-p\" />\n      <__serverdestination destinations=\"Test:tcp:{{ payload.uid }}\" />\n      <remarks time=\"{{ global.starttime }}\" to=\"{{ payload.uid }}\" source=\"BAO.F.ATAK.ASN-TAK-FAKEUID\">{{ ${CON_MSG} }}</remarks>\n      <marti>\n         <dest callsign=\"{{ payload.id }}\" />\n      </marti>\n   </detail>\n</event>",
+        "output": "str",
+        "x": 1240,
+        "y": 1100,
+        "wires": [
+            [
+                "7256fe31197124a7",
+                "6ecd8bb991185975"
+            ]
+        ]
+    },
+    {
+        "id": "7256fe31197124a7",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1430,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "ea39d8ca12b93f95",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8bec09e61e9a0ed2",
+        "type": "catch",
+        "z": "242de052319dd764",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 220,
+        "y": 1220,
+        "wires": [
+            [
+                "9403302a8a12bb2d"
+            ]
+        ]
+    },
+    {
+        "id": "9403302a8a12bb2d",
+        "type": "switch",
+        "z": "242de052319dd764",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "\"Error: SQLITE_CONSTRAINT: UNIQUE constraint failed: FirtSeen.id\"",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 1220,
+        "wires": [
+            [
+                "ad14ce4afb78bbcb"
+            ],
+            [
+                "41d613228ad4ea1b"
+            ]
+        ]
+    },
+    {
+        "id": "ad14ce4afb78bbcb",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "41d613228ad4ea1b",
+        "type": "debug",
+        "z": "242de052319dd764",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 1240,
         "wires": []
     }
 ]
