@@ -1081,25 +1081,6 @@
         "wires": []
     },
     {
-        "id": "c17052b3f8d3a0ac",
-        "type": "function",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "func": "if (msg.payload.ts > global.ts -15 ){\n   return [ msg.payload ];\n} else {\n   return [ msg, null ];\n}\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1240,
-        "y": 1240,
-        "wires": [
-            [
-                "aee342a0874ef1b7"
-            ]
-        ]
-    },
-    {
         "id": "aee342a0874ef1b7",
         "type": "template",
         "z": "cfdaac38e6a0b145",
@@ -1317,7 +1298,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 230,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "356e5f876b6cbe18"
@@ -1344,7 +1325,7 @@
         "to": "",
         "reg": false,
         "x": 560,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "0812b93e4c22e689"
@@ -1364,7 +1345,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 810,
-        "y": 520,
+        "y": 580,
         "wires": []
     },
     {
@@ -1382,7 +1363,7 @@
         "y": 1240,
         "wires": [
             [
-                "c17052b3f8d3a0ac"
+                "87c97adf9f63be1a"
             ]
         ]
     },
@@ -1402,6 +1383,25 @@
         "wires": [
             [
                 "62b9c7a93eda5066"
+            ]
+        ]
+    },
+    {
+        "id": "87c97adf9f63be1a",
+        "type": "function",
+        "z": "cfdaac38e6a0b145",
+        "name": "CHECK TIME DIFF",
+        "func": "timea = msg.payload.ts\ntimeb = global.get(\"ts\")\ntimec = timeb - timea\n\n\nmsg.timediff = {\n  timea:timea,\n  timeb:timeb,\n  diff:timec\n}\n\nif (msg.timediff.diff <= 15000){\n    return msg;\n}\nelse {\n    return;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 1240,
+        "wires": [
+            [
+                "aee342a0874ef1b7"
             ]
         ]
     }
