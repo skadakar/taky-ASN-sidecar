@@ -1085,7 +1085,7 @@
         "type": "function",
         "z": "cfdaac38e6a0b145",
         "name": "",
-        "func": "if (msg.payload.ts < global.ts -61 ){\n   return [ msg.payload ];\n} else {\n   return [ msg, null ];\n}\n",
+        "func": "if (msg.payload.ts > global.ts -61 ){\n   return [ msg.payload ];\n} else {\n   return [ msg, null ];\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
