@@ -1089,7 +1089,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"GeoChat.ASN-TAK-FAKE-UID.{{ payload.id }}.JunkMessageId-{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<__chat parent=\"RootContactGroup\" groupOwner=\"false\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\" chatroom=\"{{ payload.id }}\" id=\"{{ payload.uid }}\" senderCallsign=\"ASN-TAK\">\n\t\t\t<chatgrp uid0=\"ASN-TAK-FAKE-UID\" uid1=\"{{ payload.uid }}\" id=\"{{ payload.uid }}\"/>\n\t\t</__chat>\n\t\t<__serverdestination destinations=\"{{ global.ip }}:tcp:{{ payload.uid }}\" />\n\t\t<link uid=\"ASN-TAK-FAKE-UID\" type=\"a-f-G-U-C\" relation=\"p-p\"/>\n\t\t<remarks source=\"BAO.F.ATAK.ASN-TAK-FAKE-UID\" to=\"{{ payload.uid }}\" time=\"{{ global.starttime }}\">Welcome to ASN-TAK for {{ global.serverid }} team!\n\nMake sure you are only on your team's server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n\t\t<marti>\n\t\t\t<dest callsign=\"{{ payload.id }}\"/>\n\t\t</marti>\n\t</detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.ASN-TAK-BOT-FAKE-UID.{{ payload.id }}.JunkMessageId-{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<__chat parent=\"RootContactGroup\" groupOwner=\"false\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\" chatroom=\"{{ payload.id }}\" id=\"{{ payload.uid }}\" senderCallsign=\"ASN-TAK-BOT\">\n\t\t\t<chatgrp uid0=\"ASN-TAK-BOT-FAKE-UID\" uid1=\"{{ payload.uid }}\" id=\"{{ payload.uid }}\"/>\n\t\t</__chat>\n\t\t<__serverdestination destinations=\"{{ global.ip }}:tcp:{{ payload.uid }}\" />\n\t\t<link uid=\"ASN-TAK-BOT-FAKE-UID\" type=\"a-f-G-U-C\" relation=\"p-p\"/>\n\t\t<remarks source=\"BAO.F.ATAK.ASN-TAK-BOT-FAKE-UID\" to=\"{{ payload.uid }}\" time=\"{{ global.starttime }}\">Welcome to ASN-TAK for {{ global.serverid }} team!\n\nMake sure you are only on your team's server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n\t\t<marti>\n\t\t\t<dest callsign=\"{{ payload.id }}\"/>\n\t\t</marti>\n\t</detail>\n</event>",
         "output": "str",
         "x": 1440,
         "y": 1240,
@@ -1266,7 +1266,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"GeoChat.ASN-TAK-FAKE-UID.{{ payload.id }}.JunkMessageId-{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<__chat parent=\"RootContactGroup\" groupOwner=\"false\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\" chatroom=\"{{ payload.id }}\" id=\"{{ payload.uid }}\" senderCallsign=\"ASN-TAK\">\n\t\t\t<chatgrp uid0=\"ASN-TAK-FAKE-UID\" uid1=\"{{ payload.uid }}\" id=\"{{ payload.uid }}\"/>\n\t\t</__chat>\n\t\t<__serverdestination destinations=\"{{ global.ip }}:tcp:{{ payload.uid }}\" />\n\t\t<link uid=\"ASN-TAK-FAKE-UID\" type=\"a-f-G-U-C\" relation=\"p-p\"/>\n\t\t<remarks source=\"BAO.F.ATAK.ASN-TAK-FAKE-UID\" to=\"{{ payload.uid }}\" time=\"{{ global.starttime }}\">Reminder: {{ global.serverid }} connection is active. </remarks>\n\t\t<marti>\n\t\t\t<dest callsign=\"{{ payload.id }}\"/>\n\t\t</marti>\n\t</detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"GeoChat.ASN-TAK-BOT-FAKE-UID.{{ payload.id }}.JunkMessageId-{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<__chat parent=\"RootContactGroup\" groupOwner=\"false\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\" chatroom=\"{{ payload.id }}\" id=\"{{ payload.uid }}\" senderCallsign=\"ASN-TAK-BOT\">\n\t\t\t<chatgrp uid0=\"ASN-TAK-BOT-FAKE-UID\" uid1=\"{{ payload.uid }}\" id=\"{{ payload.uid }}\"/>\n\t\t</__chat>\n\t\t<__serverdestination destinations=\"{{ global.ip }}:tcp:{{ payload.uid }}\" />\n\t\t<link uid=\"ASN-TAK-BOT-FAKE-UID\" type=\"a-f-G-U-C\" relation=\"p-p\"/>\n\t\t<remarks source=\"BAO.F.ATAK.ASN-TAK-BOT-FAKE-UID\" to=\"{{ payload.uid }}\" time=\"{{ global.starttime }}\">Reminder: {{ global.serverid }} connection is active. </remarks>\n\t\t<marti>\n\t\t\t<dest callsign=\"{{ payload.id }}\"/>\n\t\t</marti>\n\t</detail>\n</event>",
         "output": "str",
         "x": 1440,
         "y": 1320,
@@ -1409,7 +1409,7 @@
         "id": "bece0024ea691f01",
         "type": "inject",
         "z": "cfdaac38e6a0b145",
-        "name": "CREATE FAKE ASN-TAK USER",
+        "name": "CREATE FAKE ASN-TAK-BOT USER",
         "props": [
             {
                 "p": "payload"
@@ -1419,10 +1419,10 @@
                 "vt": "str"
             }
         ],
-        "repeat": "10",
+        "repeat": "60",
         "crontab": "",
         "once": true,
-        "onceDelay": "3",
+        "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -1443,7 +1443,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"ASN-TAK-FAKE-UID\" type=\"a-f-G-U-C\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.starttime }}\">\n  <point lat=\"90.000000\" lon=\"135.000000\" hae=\"9999999.0\" ce=\"9999999.0\" le=\"9999999.0\"/>\n  <detail>\n    <takv os=\"31\" version=\"ASN-TAK-BOT\" device=\"ASN-TAK\" platform=\"ATAK-CIV\"/>\n    <contact endpoint=\"*:-1:stcp\" callsign=\"ASN-TAK\"/>\n    <uid Droid=\"ASN-TAK\"/>\n    <__group role=\"Team Member\" name=\"Cyan\"/>\n    <status battery=\"101\"/>\n    <track course=\"0.0\" speed=\"0.0\"/>\n  </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"ASN-TAK-BOT-FAKE-UID\" type=\"a-f-G-U-C\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"90.0\" lon=\"135.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<takv os=\"31\" version=\"1\" device=\"ASN-TAK-BOT\" platform=\"ATAK-CIV\"/>\n\t\t<contact endpoint=\"*:-1:stcp\" callsign=\"ASN-TAK-BOT\"/>\n\t\t<uid Droid=\"ASN-TAK-BOT\"/>\n\t\t<__group role=\"Team Member\" name=\"Black\"/>\n\t\t<status battery=\"10\"/>\n\t\t<track course=\"0.0\" speed=\"0.0\"/>\n\t</detail>\n</event>",
         "output": "str",
         "x": 1440,
         "y": 1400,
