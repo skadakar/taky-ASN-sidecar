@@ -22,6 +22,7 @@ Supported env variables:
 ```
     environment:
       - SERVER_ID=Something
+      - MON_PORT=1337
 ```
 
 
