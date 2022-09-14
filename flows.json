@@ -14,20 +14,6 @@
         "mode": "RWC"
     },
     {
-        "id": "dc169dd1444aa8a5",
-        "type": "tls-config",
-        "name": "TAK SSL",
-        "cert": "/data/certs/server.pem",
-        "key": "/data/certs/server.key",
-        "ca": "/data/certs/ca.pem",
-        "certname": "crtfile.crt",
-        "keyname": "keyfile.pem",
-        "caname": "ca.crt",
-        "servername": "",
-        "verifyservercert": false,
-        "alpnprotocol": ""
-    },
-    {
         "id": "b78dc12070421d5c",
         "type": "inject",
         "z": "cfdaac38e6a0b145",
@@ -133,12 +119,12 @@
         "type": "tcp out",
         "z": "cfdaac38e6a0b145",
         "name": "SEND-TO-TAK",
-        "host": "${COT_IP}",
-        "port": "${COT_PORT}",
+        "host": "127.0.0.1",
+        "port": "8087",
         "beserver": "client",
         "base64": false,
         "end": false,
-        "tls": "dc169dd1444aa8a5",
+        "tls": "",
         "x": 1760,
         "y": 840,
         "wires": []
@@ -682,29 +668,6 @@
         "wires": [
             [
                 "12363bf61649cba8"
-            ]
-        ]
-    },
-    {
-        "id": "ab43ec80bcb3c9a5",
-        "type": "tcp tls in",
-        "z": "cfdaac38e6a0b145",
-        "name": "FETCH-FROM-TAK",
-        "server": "client",
-        "host": "${COT_IP}",
-        "port": "${COT_PORT}",
-        "datamode": "stream",
-        "datatype": "utf8",
-        "newline": "",
-        "topic": "",
-        "base64": false,
-        "tls": "dc169dd1444aa8a5",
-        "x": 230,
-        "y": 780,
-        "wires": [
-            [
-                "626f25b30c2f56e9",
-                "8c28418a908e0f31"
             ]
         ]
     },
@@ -1450,6 +1413,30 @@
         "wires": [
             [
                 "7dac542fdde70908"
+            ]
+        ]
+    },
+    {
+        "id": "e41725d924a6f71d",
+        "type": "tcp in",
+        "z": "cfdaac38e6a0b145",
+        "name": "FETCH-FROM-TAK",
+        "server": "client",
+        "host": "127.0.0.1",
+        "port": "8087",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "",
+        "topic": "",
+        "trim": false,
+        "base64": false,
+        "tls": "",
+        "x": 230,
+        "y": 780,
+        "wires": [
+            [
+                "626f25b30c2f56e9",
+                "8c28418a908e0f31"
             ]
         ]
     }
