@@ -172,125 +172,7 @@
         "y": 1020,
         "wires": [
             [
-                "6143fef560dcd819"
-            ]
-        ]
-    },
-    {
-        "id": "570453add72beeb9",
-        "type": "split",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "items",
-        "x": 910,
-        "y": 1020,
-        "wires": [
-            [
-                "7c855e3494b8fb4b"
-            ]
-        ]
-    },
-    {
-        "id": "6143fef560dcd819",
-        "type": "switch",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "regex",
-                "v": "{\"items\":{}}",
-                "vt": "str",
-                "case": false
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 770,
-        "y": 1020,
-        "wires": [
-            [],
-            [
-                "570453add72beeb9"
-            ]
-        ]
-    },
-    {
-        "id": "7c855e3494b8fb4b",
-        "type": "json",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 1030,
-        "y": 1020,
-        "wires": [
-            [
-                "6d6bb2be1bbf16bb"
-            ]
-        ]
-    },
-    {
-        "id": "6d6bb2be1bbf16bb",
-        "type": "function",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "func": "msg.payload = Object.keys(msg.payload.items);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1160,
-        "y": 1020,
-        "wires": [
-            [
-                "3032a4e1c0c6f848"
-            ]
-        ]
-    },
-    {
-        "id": "3032a4e1c0c6f848",
-        "type": "change",
-        "z": "cfdaac38e6a0b145",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[0]",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "backupname",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1320,
-        "y": 1020,
-        "wires": [
-            [
-                "9fe8c7b135d6dd7c"
+                "883d65cff4c7bbbd"
             ]
         ]
     },
@@ -302,11 +184,11 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "LastSeen",
-        "x": 800,
-        "y": 1140,
+        "x": 680,
+        "y": 1180,
         "wires": [
             [
-                "5696ebc0ad6e3ff5"
+                "8e95a50ebf7af9c0"
             ]
         ]
     },
@@ -319,10 +201,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT\n  *\nFROM\n  LastSeen\nWHERE\n  id = \"{{ payload }}\"",
+        "template": "SELECT\n  *\nFROM\n  LastSeen\nWHERE\n  id = \"{{ callsign }}\"",
         "output": "str",
-        "x": 640,
-        "y": 1140,
+        "x": 500,
+        "y": 1180,
         "wires": [
             [
                 "9a669186962e036a"
@@ -347,8 +229,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 970,
-        "y": 1140,
+        "x": 1030,
+        "y": 1120,
         "wires": [
             [
                 "15495a24e67a5f25"
@@ -369,8 +251,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
-        "y": 1160,
+        "x": 1220,
+        "y": 1140,
         "wires": [
             [
                 "ad21d524c6acfc09"
@@ -388,8 +270,8 @@
         "syntax": "mustache",
         "template": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<event version=\"2.0\" uid=\"COTUID-{{ payload.name }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ payload.name }}\" />\n      <__video uid=\"VIDEOUID-{{ payload.name }}\" url=\"{{global.ip}}:8554/{{ payload.name }}\">\n         <ConnectionEntry protocol=\"rtsp\" path=\"/{{ payload.name }}\" address=\"{{global.ip}}\" port=\"8554\" alias=\"{{ payload.name }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
         "output": "str",
-        "x": 1340,
-        "y": 1140,
+        "x": 1400,
+        "y": 1120,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -407,8 +289,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
-        "y": 1120,
+        "x": 1220,
+        "y": 1100,
         "wires": [
             [
                 "ad21d524c6acfc09"
@@ -861,7 +743,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "ac2f7aeb134767a7"
@@ -877,7 +759,7 @@
         "sql": "",
         "name": "FirtSeen",
         "x": 700,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "acad3dfe57b8629e"
@@ -896,7 +778,7 @@
         "template": "SELECT\n  *\nFROM\n  FirtSeen",
         "output": "str",
         "x": 520,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "8e94597b25c3c9db"
@@ -1055,7 +937,7 @@
         "template": "<event version=\"2.0\" uid=\"GeoChat.ASN-TAK-BOT-FAKE-UID.{{ payload.id }}.JunkMessageId-{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<__chat parent=\"RootContactGroup\" groupOwner=\"false\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\" chatroom=\"{{ payload.id }}\" id=\"{{ payload.uid }}\" senderCallsign=\"ASN-TAK-BOT\">\n\t\t\t<chatgrp uid0=\"ASN-TAK-BOT-FAKE-UID\" uid1=\"{{ payload.uid }}\" id=\"{{ payload.uid }}\"/>\n\t\t</__chat>\n\t\t<__serverdestination destinations=\"{{ global.ip }}:tcp:{{ payload.uid }}\" />\n\t\t<link uid=\"ASN-TAK-BOT-FAKE-UID\" type=\"a-f-G-U-C\" relation=\"p-p\"/>\n\t\t<remarks source=\"BAO.F.ATAK.ASN-TAK-BOT-FAKE-UID\" to=\"{{ payload.uid }}\" time=\"{{ global.starttime }}\">Welcome to ASN-TAK for {{ global.serverid }} team!\n\nMake sure you are only on your team's server.\nRemember to properly exit the application after use.\n\nMore info at airsoftnorge.com\n      </remarks>\n\t\t<marti>\n\t\t\t<dest callsign=\"{{ payload.id }}\"/>\n\t\t</marti>\n\t</detail>\n</event>",
         "output": "str",
         "x": 1440,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -1086,7 +968,7 @@
         "scope": null,
         "uncaught": false,
         "x": 200,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "36f85feb9687f191"
@@ -1114,7 +996,7 @@
         "repair": false,
         "outputs": 2,
         "x": 350,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "a1b3bf7f5582bfc9"
@@ -1137,7 +1019,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1480,
+        "y": 1560,
         "wires": []
     },
     {
@@ -1153,7 +1035,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 1520,
+        "y": 1600,
         "wires": []
     },
     {
@@ -1178,7 +1060,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 1320,
+        "y": 1400,
         "wires": [
             [
                 "ef2310c0a758608f"
@@ -1194,7 +1076,7 @@
         "sql": "",
         "name": "FirtSeen",
         "x": 700,
-        "y": 1320,
+        "y": 1400,
         "wires": [
             [
                 "301b050434fd8739"
@@ -1213,7 +1095,7 @@
         "template": "SELECT\n  *\nFROM\n  FirtSeen",
         "output": "str",
         "x": 520,
-        "y": 1320,
+        "y": 1400,
         "wires": [
             [
                 "c34895b9221a9d3b"
@@ -1232,7 +1114,7 @@
         "template": "<event version=\"2.0\" uid=\"GeoChat.ASN-TAK-BOT-FAKE-UID.{{ payload.id }}.JunkMessageId-{{ payload.id }}-{{ global.ts }}\" type=\"b-t-f\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"0.0\" lon=\"0.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<__chat parent=\"RootContactGroup\" groupOwner=\"false\" messageId=\"JunkMessageId-{{ payload.id }}-{{ global.ts }}\" chatroom=\"{{ payload.id }}\" id=\"{{ payload.uid }}\" senderCallsign=\"ASN-TAK-BOT\">\n\t\t\t<chatgrp uid0=\"ASN-TAK-BOT-FAKE-UID\" uid1=\"{{ payload.uid }}\" id=\"{{ payload.uid }}\"/>\n\t\t</__chat>\n\t\t<__serverdestination destinations=\"{{ global.ip }}:tcp:{{ payload.uid }}\" />\n\t\t<link uid=\"ASN-TAK-BOT-FAKE-UID\" type=\"a-f-G-U-C\" relation=\"p-p\"/>\n\t\t<remarks source=\"BAO.F.ATAK.ASN-TAK-BOT-FAKE-UID\" to=\"{{ payload.uid }}\" time=\"{{ global.starttime }}\">Reminder: {{ global.serverid }} connection is active. </remarks>\n\t\t<marti>\n\t\t\t<dest callsign=\"{{ payload.id }}\"/>\n\t\t</marti>\n\t</detail>\n</event>",
         "output": "str",
         "x": 1440,
-        "y": 1320,
+        "y": 1400,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -1323,7 +1205,7 @@
         "stream": false,
         "addname": "",
         "x": 950,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "87c97adf9f63be1a"
@@ -1342,7 +1224,7 @@
         "stream": false,
         "addname": "",
         "x": 950,
-        "y": 1320,
+        "y": 1400,
         "wires": [
             [
                 "62b9c7a93eda5066"
@@ -1361,7 +1243,7 @@
         "finalize": "",
         "libs": [],
         "x": 1190,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "aee342a0874ef1b7"
@@ -1390,7 +1272,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1220,
-        "y": 1400,
+        "y": 1480,
         "wires": [
             [
                 "7dc139f2c2fcd057"
@@ -1409,7 +1291,7 @@
         "template": "<event version=\"2.0\" uid=\"ASN-TAK-BOT-FAKE-UID\" type=\"a-f-G-U-C\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"90.0\" lon=\"135.0\" hae=\"9999999.0\" ce=\"1.0\" le=\"9999999.0\"/>\n\t<detail>\n\t\t<takv os=\"31\" version=\"1\" device=\"ASN-TAK-BOT\" platform=\"ATAK-CIV\"/>\n\t\t<contact endpoint=\"*:-1:stcp\" callsign=\"ASN-TAK-BOT\"/>\n\t\t<uid Droid=\"ASN-TAK-BOT\"/>\n\t\t<__group role=\"Team Member\" name=\"Black\"/>\n\t\t<status battery=\"10\"/>\n\t\t<track course=\"0.0\" speed=\"0.0\"/>\n\t</detail>\n</event>",
         "output": "str",
         "x": 1440,
-        "y": 1400,
+        "y": 1480,
         "wires": [
             [
                 "7dac542fdde70908"
@@ -1437,6 +1319,206 @@
             [
                 "626f25b30c2f56e9",
                 "8c28418a908e0f31"
+            ]
+        ]
+    },
+    {
+        "id": "4ab27b8b2d1eaca7",
+        "type": "switch",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 1240,
+        "wires": [
+            [
+                "6cf13e2278c172da"
+            ],
+            [
+                "d073f3ac7ab7e41a"
+            ]
+        ]
+    },
+    {
+        "id": "d073f3ac7ab7e41a",
+        "type": "function",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "func": "name = msg.payload[0].id;\nlat = msg.payload[0].lat;\nlon = msg.payload[0].lon;\nhae = msg.payload[0].hae;\nce = msg.payload[0].ce;\nle = msg.payload[0].le;\n\nmsg.payload = {\n  name: name,\n  lat: lat,\n  lon: lon,\n  hae: hae,\n  ce: ce,\n  le: le\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 1260,
+        "wires": [
+            [
+                "3d030306224e030c"
+            ]
+        ]
+    },
+    {
+        "id": "3d030306224e030c",
+        "type": "template",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<event version=\"2.0\" uid=\"COTUID-{{ payload.name }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ payload.name }}\" />\n      <__video uid=\"VIDEOUID-{{ payload.name }}\" url=\"{{global.ip}}:1935/{{ payload.name }}\">\n         <ConnectionEntry protocol=\"rtmp\" path=\"/{{ payload.name }}\" address=\"{{global.ip}}\" port=\"1935\" alias=\"{{ payload.name }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
+        "output": "str",
+        "x": 1400,
+        "y": 1240,
+        "wires": [
+            [
+                "7dac542fdde70908"
+            ]
+        ]
+    },
+    {
+        "id": "6cf13e2278c172da",
+        "type": "function",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "func": "name = msg.backupname;\n\n\nmsg.payload = {\n  name: name,\n  lat: \"0.0\",\n  lon: \"0.0\",\n  hae: \"0.0\",\n  ce: \"99999\",\n  le: \"99999\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 1220,
+        "wires": [
+            [
+                "3d030306224e030c"
+            ]
+        ]
+    },
+    {
+        "id": "8e95a50ebf7af9c0",
+        "type": "switch",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "property": "proto",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "rtspSession",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "rtmpSession",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 1180,
+        "wires": [
+            [
+                "5696ebc0ad6e3ff5"
+            ],
+            [
+                "4ab27b8b2d1eaca7"
+            ]
+        ]
+    },
+    {
+        "id": "883d65cff4c7bbbd",
+        "type": "json",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": true,
+        "x": 790,
+        "y": 1020,
+        "wires": [
+            [
+                "781871e4f1eee77e"
+            ]
+        ]
+    },
+    {
+        "id": "781871e4f1eee77e",
+        "type": "split",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 970,
+        "y": 1020,
+        "wires": [
+            [
+                "8aa36a30f8cf8bca"
+            ]
+        ]
+    },
+    {
+        "id": "8aa36a30f8cf8bca",
+        "type": "switch",
+        "z": "cfdaac38e6a0b145",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1150,
+        "y": 1020,
+        "wires": [
+            [],
+            [
+                "a348f4f6dfd44b21"
+            ]
+        ]
+    },
+    {
+        "id": "a348f4f6dfd44b21",
+        "type": "function",
+        "z": "cfdaac38e6a0b145",
+        "name": "function 1",
+        "func": "msg.callsign = Object.keys(msg.payload)[0];\nmsg.proto = msg.payload[Object.keys(msg.payload)[0]].source.type;\n\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1020,
+        "wires": [
+            [
+                "9fe8c7b135d6dd7c"
             ]
         ]
     }
