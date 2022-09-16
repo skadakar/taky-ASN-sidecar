@@ -6,7 +6,7 @@ https://hub.docker.com/r/skadakar/taky-rtsp-sidecar
 
 
 
-Self contained RTSP missing link for taky, forcing 8554 port usage and RTSP.
+Self contained RTSP/RTMP missing link for taky, forcing 8554 port usage and RTSP.
 
 It will also keep track of peoples last locations and attempt to match locations of videofeeds to users with the same name.
 
@@ -14,7 +14,7 @@ Bob1 will be given the same location as rtsp://example.com/Bob1
 
 This implimentation is TAKY specific, in that it uses the TAKY monitoring port instead of SSL.
 
-#### The RTSP Sidecar MUST be located on the same host as the RTSP server!
+#### The ASN Sidecar MUST be located on the same host as the RTSPsimple server!
 
 Overwrite settings by attaching config files to the /data/ folder, as with normal node-red docker.
 
