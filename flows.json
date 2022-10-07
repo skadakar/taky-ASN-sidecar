@@ -184,7 +184,7 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "LastSeen",
-        "x": 680,
+        "x": 520,
         "y": 1180,
         "wires": [
             [
@@ -196,14 +196,14 @@
         "id": "9fe8c7b135d6dd7c",
         "type": "template",
         "z": "cfdaac38e6a0b145",
-        "name": "",
+        "name": "CHECK LAST LOCATION",
         "field": "topic",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "SELECT\n  *\nFROM\n  LastSeen\nWHERE\n  id = \"{{ callsign }}\"",
         "output": "str",
-        "x": 500,
+        "x": 270,
         "y": 1180,
         "wires": [
             [
@@ -1271,8 +1271,7 @@
         "wires": [
             [
                 "626f25b30c2f56e9",
-                "8c28418a908e0f31",
-                "c27561281a56e947"
+                "8c28418a908e0f31"
             ]
         ]
     },
@@ -1366,7 +1365,7 @@
         "id": "8e95a50ebf7af9c0",
         "type": "switch",
         "z": "cfdaac38e6a0b145",
-        "name": "",
+        "name": "CHECK SESSION TYPE",
         "property": "proto",
         "propertyType": "msg",
         "rules": [
@@ -1384,7 +1383,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 850,
+        "x": 810,
         "y": 1180,
         "wires": [
             [
@@ -1403,7 +1402,7 @@
         "property": "payload",
         "action": "obj",
         "pretty": true,
-        "x": 790,
+        "x": 750,
         "y": 1020,
         "wires": [
             [
@@ -1422,7 +1421,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 970,
+        "x": 890,
         "y": 1020,
         "wires": [
             [
@@ -1448,7 +1447,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1150,
+        "x": 1030,
         "y": 1020,
         "wires": [
             [],
@@ -1468,7 +1467,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
+        "x": 1160,
         "y": 1020,
         "wires": [
             [
@@ -1487,7 +1486,7 @@
         "syntax": "mustache",
         "template": "<event start=\"{{ global.starttime }}\" time=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\" how=\"m-g\" type=\"t-x-d-d\" uid=\"ForceRemoval-{{ global.ts }}\" version=\"2.0\">\n   <detail>\n      <link uid=\"{{ payload.uid-to-delete2 }}\" relation=\"none\" type=\"none\"/>\n      <__forcedelete/>\n   </detail>\n   <point ce=\"9999999\" le=\"9999999\" lat=\"0.0\" lon=\"0.0\" hae=\"0.0\"/>\n</event>\n",
         "output": "str",
-        "x": 1400,
+        "x": 1420,
         "y": 840,
         "wires": [
             [
@@ -1503,7 +1502,7 @@
         "property": "payload",
         "attr": "",
         "chr": "",
-        "x": 790,
+        "x": 770,
         "y": 840,
         "wires": [
             [
@@ -1537,7 +1536,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
+        "x": 940,
         "y": 840,
         "wires": [
             [
@@ -1572,22 +1571,6 @@
         ]
     },
     {
-        "id": "c27561281a56e947",
-        "type": "debug",
-        "z": "cfdaac38e6a0b145",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 900,
-        "wires": []
-    },
-    {
         "id": "6a6603899152a5db",
         "type": "template",
         "z": "cfdaac38e6a0b145",
@@ -1598,7 +1581,7 @@
         "syntax": "mustache",
         "template": "<event start=\"{{ global.starttime }}\" time=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\" how=\"m-g\" type=\"t-x-d-d\" uid=\"ForceRemoval2-{{ global.ts }}\" version=\"2.0\">\n   <detail>\n      <link uid=\"{{ payload.uid-to-delete }}\" relation=\"none\" type=\"none\"/>\n      <__forcedelete/>\n   </detail>\n   <point ce=\"9999999\" le=\"9999999\" lat=\"0.0\" lon=\"0.0\" hae=\"0.0\"/>\n</event>\n",
         "output": "str",
-        "x": 1400,
+        "x": 1420,
         "y": 900,
         "wires": [
             [
