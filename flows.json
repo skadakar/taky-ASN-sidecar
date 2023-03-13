@@ -185,9 +185,10 @@
         "sql": "",
         "name": "LastSeen",
         "x": 520,
-        "y": 1180,
+        "y": 1100,
         "wires": [
             [
+                "cde12cb1c7c622e3",
                 "8e95a50ebf7af9c0"
             ]
         ]
@@ -204,7 +205,7 @@
         "template": "SELECT\n  *\nFROM\n  LastSeen\nWHERE\n  id = \"{{ callsign }}\"",
         "output": "str",
         "x": 270,
-        "y": 1180,
+        "y": 1100,
         "wires": [
             [
                 "9a669186962e036a"
@@ -268,13 +269,15 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"COTUID-{{ payload.name }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ payload.name }}\" />\n      <__video uid=\"VIDEOUID-{{ payload.name }}\" url=\"{{global.ip}}:8554/{{ payload.name }}\">\n         <ConnectionEntry protocol=\"rtsp\" path=\"/{{ payload.name }}\" address=\"{{global.ip}}\" port=\"8554\" alias=\"{{ payload.name }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"COTUID-{{ callsign }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ callsign }}\" />\n      <__video uid=\"VIDEOUID-{{ callsign }}\" url=\"{{global.ip}}:8554/{{ callsign }}\">\n         <ConnectionEntry protocol=\"rtsp\" path=\"/{{ callsign }}\" address=\"{{global.ip}}\" port=\"8554\" alias=\"{{ callsign }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
         "output": "str",
         "x": 1460,
         "y": 1120,
         "wires": [
             [
-                "7dac542fdde70908"
+                "7dac542fdde70908",
+                "4a150d5c4826d33e",
+                "bf7c57560b928a5e"
             ]
         ]
     },
@@ -1332,13 +1335,14 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"COTUID-{{ payload.name }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ payload.name }}\" />\n      <__video uid=\"VIDEOUID-{{ payload.name }}\" url=\"{{global.ip}}:1935/{{ payload.name }}\">\n         <ConnectionEntry protocol=\"rtmp\" path=\"/{{ payload.name }}\" address=\"{{global.ip}}\" port=\"1935\" alias=\"{{ payload.name }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
+        "template": "<event version=\"2.0\" uid=\"COTUID-{{ callsign }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n   <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n   <detail>\n      <status readiness=\"true\" />\n      <contact callsign=\"{{ callsign }}\" />\n      <__video uid=\"VIDEOUID-{{ callsign }}\" url=\"{{global.ip}}:1935/{{ callsign }}\">\n         <ConnectionEntry protocol=\"rtmp\" path=\"/{{ callsign }}\" address=\"{{global.ip}}\" port=\"1935\" alias=\"{{ callsign }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\" />\n      </__video>\n      <precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n   </detail>\n</event>",
         "output": "str",
         "x": 1460,
         "y": 1240,
         "wires": [
             [
-                "7dac542fdde70908"
+                "7dac542fdde70908",
+                "7ecd2f0864c65284"
             ]
         ]
     },
@@ -1383,8 +1387,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 810,
-        "y": 1180,
+        "x": 770,
+        "y": 1220,
         "wires": [
             [
                 "5696ebc0ad6e3ff5"
@@ -1406,7 +1410,8 @@
         "y": 1020,
         "wires": [
             [
-                "781871e4f1eee77e"
+                "781871e4f1eee77e",
+                "41794f9588692256"
             ]
         ]
     },
@@ -1471,7 +1476,8 @@
         "y": 1020,
         "wires": [
             [
-                "9fe8c7b135d6dd7c"
+                "9fe8c7b135d6dd7c",
+                "893128f80d6cd6a3"
             ]
         ]
     },
@@ -1613,5 +1619,101 @@
                 "6a6603899152a5db"
             ]
         ]
+    },
+    {
+        "id": "41794f9588692256",
+        "type": "debug",
+        "z": "cfdaac38e6a0b145",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "4a150d5c4826d33e",
+        "type": "debug",
+        "z": "cfdaac38e6a0b145",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "7ecd2f0864c65284",
+        "type": "debug",
+        "z": "cfdaac38e6a0b145",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1820,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "893128f80d6cd6a3",
+        "type": "debug",
+        "z": "cfdaac38e6a0b145",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "cde12cb1c7c622e3",
+        "type": "debug",
+        "z": "cfdaac38e6a0b145",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "bf7c57560b928a5e",
+        "type": "debug",
+        "z": "cfdaac38e6a0b145",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1840,
+        "y": 1060,
+        "wires": []
     }
 ]
