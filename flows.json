@@ -8,12 +8,6 @@
         "env": []
     },
     {
-        "id": "4e71ffcc.32ba8",
-        "type": "sqlitedb",
-        "db": ":memory:",
-        "mode": "RWC"
-    },
-    {
         "id": "b78dc12070421d5c",
         "type": "inject",
         "z": "cfdaac38e6a0b145",
@@ -269,7 +263,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"COTUID-{{ callsign }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n\t<detail>\n\t\t<contact callsign=\"{{ callsign }}\" />\n\t\t<link type=\"COTUID-LINK-{{ callsign }}\" parent_callsign=\"{{ callsign }}\" relation=\"p-p\" production_time=\"{{ global.starttime }}\"/>\n\t\t<__video uid=\"VIDEOUID-{{ callsign }}\" url=\"{{global.ip}}:8554/{{ callsign }}\">\n\t\t\t<ConnectionEntry protocol=\"rtsp\" path=\"/{{ callsign }}\" address=\"{{global.ip}}\" port=\"8554\" uid=\"VideFeedUid-{{ callsign }}\" alias=\"{{ callsign }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"True\" networkTimeout=\"0\" bufferTime=\"-1\" />\n\t\t</__video>\n\t\t<precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n\t\t<remarks/>\n\t\t<sensor fov=\"45\" fovBlue=\"1\" fovGreen=\"1\" fovRed=\"0\" fovAlpha=\"0\" range=\"15\" azimuth=\"270\" hideFov=\"true\"/>\n\t</detail>\n</event>\n",
+        "template": "<event version=\"2.0\" uid=\"COTUID-{{ callsign }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n  <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n  <detail>\n    <contact callsign=\"{{ callsign }}\"/>\n    <link type=\"a-f-G-U-C-I\" uid=\"LINK-{ callsign }\" parent_callsign=\"{{ callsign }}\" relation=\"p-p\" production_time=\"{{ global.starttime }}\"/>\n    <__video url=\"{{global.ip}}:8554/{{ callsign }}\" uid=\"VIDEOUID-{{ callsign }}\">\n      <ConnectionEntry protocol=\"rtsp\" path=\"/havoc\" address=\"yellow.airsoftnorge.com\" port=\"1935\" uid=\"72d4af4c-7f1a-4b53-b2b3-2afc718da11c\" alias=\"yellowstuff\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\"/>\n    </__video>\n    <sensor fov=\"45\" fovBlue=\"1\" displayMagneticReference=\"0\" range=\"0\" fovGreen=\"1\" fovAlpha=\"0.0\" fovRed=\"1\" azimuth=\"0\"/>\n    <remarks/>\n  </detail>\n</event>",
         "output": "str",
         "x": 1460,
         "y": 1120,
@@ -1335,7 +1329,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<event version=\"2.0\" uid=\"COTUID-{{ callsign }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n\t<point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n\t<detail>\n\t\t<contact callsign=\"{{ callsign }}\" />\n\t\t<link type=\"COTUID-LINK-{{ callsign }}\" parent_callsign=\"{{ callsign }}\" relation=\"p-p\" production_time=\"{{ global.starttime }}\"/>\n\t\t<__video uid=\"VIDEOUID-{{ callsign }}\" url=\"{{global.ip}}:1935/{{ callsign }}\">\n\t\t\t<ConnectionEntry protocol=\"rtsp\" path=\"/{{ callsign }}\" address=\"{{global.ip}}\" port=\"1935\" uid=\"VideFeedUid-{{ callsign }}\" alias=\"{{ callsign }}\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"True\" networkTimeout=\"0\" bufferTime=\"-1\" />\n\t\t</__video>\n\t\t<precisionlocation geopointsrc=\"???\" altsrc=\"???\" />\n\t\t<remarks/>\n\t\t<sensor fov=\"45\" fovBlue=\"1\" fovGreen=\"1\" fovRed=\"0\" fovAlpha=\"0\" range=\"15\" azimuth=\"270\" hideFov=\"true\"/>\n\t</detail>\n</event>\n",
+        "template": "<event version=\"2.0\" uid=\"COTUID-{{ callsign }}\" type=\"b-m-p-s-p-loc\" how=\"h-g-i-g-o\" time=\"{{ global.starttime }}\" start=\"{{ global.starttime }}\" stale=\"{{ global.staletime }}\">\n  <point lat=\"{{ payload.lat }}\" lon=\"{{ payload.lon }}\" hae=\"{{ payload.hae }}\" ce=\"{{ payload.ce }}\" le=\"{{ payload.le }}\" />\n  <detail>\n    <contact callsign=\"{{ callsign }}\"/>\n    <link type=\"a-f-G-U-C-I\" uid=\"LINK-{ callsign }\" parent_callsign=\"{{ callsign }}\" relation=\"p-p\" production_time=\"{{ global.starttime }}\"/>\n    <__video url=\"{{global.ip}}:1935/{{ callsign }}\" uid=\"VIDEOUID-{{ callsign }}\">\n      <ConnectionEntry protocol=\"rtmp\" path=\"/havoc\" address=\"yellow.airsoftnorge.com\" port=\"1935\" uid=\"72d4af4c-7f1a-4b53-b2b3-2afc718da11c\" alias=\"yellowstuff\" roverPort=\"-1\" rtspReliable=\"0\" ignoreEmbeddedKLV=\"False\" networkTimeout=\"0\" bufferTime=\"-1\"/>\n    </__video>\n    <sensor fov=\"45\" fovBlue=\"1\" displayMagneticReference=\"0\" range=\"0\" fovGreen=\"1\" fovAlpha=\"0.0\" fovRed=\"1\" azimuth=\"0\"/>\n    <remarks/>\n  </detail>\n</event>",
         "output": "str",
         "x": 1460,
         "y": 1240,
@@ -1715,5 +1709,11 @@
         "x": 1840,
         "y": 1060,
         "wires": []
+    },
+    {
+        "id": "4e71ffcc.32ba8",
+        "type": "sqlitedb",
+        "db": ":memory:",
+        "mode": "RWC"
     }
 ]
